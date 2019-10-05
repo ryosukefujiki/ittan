@@ -8,7 +8,7 @@
     </a>
     <a class="TheHome_Work_Countainer FadeIn">
       <!-- <transition> -->
-        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image_ComingSoon FadeIn">
+        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image_ComingSoon FadeIn" @click="wiggle()">
       <!-- </transition> -->
     </a>
   </div>
@@ -54,6 +54,49 @@ export default {
       // // });
       // await this.$delay(2000);
       this.$router.push(url)
+    },
+    async wiggle(){
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".TheHome_Work_Image_ComingSoon",
+          0.4,
+          {
+            rotationY: 16,
+            ease: Expo.easeOut,
+            // startAt: {
+            //   y: "10px",
+            //   opacity: 0
+            // }
+          });
+      });
+      await this.$delay(100)
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".TheHome_Work_Image_ComingSoon",
+          0.4,
+          {
+            rotationY: -16,
+            ease: Expo.easeOut,
+            // startAt: {
+            //   y: "10px",
+            //   opacity: 0
+            // }
+          });
+      });
+      await this.$delay(100)
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".TheHome_Work_Image_ComingSoon",
+          1,
+          {
+            rotationY: 0,
+            ease: Expo.easeOut,
+            // startAt: {
+            //   y: "10px",
+            //   opacity: 0
+            // }
+          });
+      });
     },
       
       // if(this.$route.path != '/'){
@@ -127,6 +170,7 @@ export default {
 }
 .TheHome_Work_Image_ComingSoon{
   width: 100%;  
+  /* transform: rotateY(20deg); */
 }
 
 @media screen and (min-width:480px) { 

@@ -8,7 +8,7 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1.0' },
       { hid: 'description', name: 'description', content: '"ittan" テクノロジーによりファッションの新しい可能性を探索するクリエイティブ集団。' },
       { name: 'keywords', content: 'ittan MetaWindow' },
       { property: 'fb:app_id', content: '448470745767086' },

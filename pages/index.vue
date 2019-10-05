@@ -1,6 +1,6 @@
 <template>
   <div class="TheHome">
-    <div class="TheHome_Work_Countainer" @click="routing('meta-window')">
+    <div class="TheHome_Work_Countainer" id="meta-window" @click="routing('meta-window',$event)">
       <transition>
         <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
       </transition>
@@ -38,15 +38,30 @@ export default {
     this.fadeIn()
   },
   methods: {
-    routing(url){
+    async routing(url,event){
+      console.log(event.path[1].id)
+      console.log(url)
+      const element_id = "#" + event.path[1].id
+      // requestAnimationFrame(() => {
+      //   TweenMax.to(
+      //     element_id,
+      //     1,
+      //     {
+      //       top: 0,
+      //       left: 0,
+      //       ease: Expo.easeOut,
+      //     },);
+      // // });
+      // await this.$delay(2000);
       this.$router.push(url)
+    },
+      
       // if(this.$route.path != '/'){
       //   this.$store.commit('homeClick')
       // }
       // if (this.headerActive == true){
       //   this.toggleMenu()
       // }
-    },
     fadeIn(){
       requestAnimationFrame(() => {
         TweenMax.staggerTo(

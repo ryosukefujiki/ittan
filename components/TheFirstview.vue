@@ -72,6 +72,12 @@ export default {
           0.1
         );
       });
+      // requestAnimationFrame(() => {
+      //   TweenMax.to(".TheLoading_Logo_Image", 0.2, {
+      //     filter: "blur(0px)",
+      //     ease: Expo.easeIn
+      //   })
+      // })
       this.$store.commit("firstview/enter");
     },
      async entered(val) {
@@ -110,6 +116,7 @@ export default {
 .TheLoading_Logo_Image{
   width: 48px;
   margin-bottom: 12px;
+  /* filter: blur(1px); */
 }
 
 

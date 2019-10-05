@@ -3,7 +3,7 @@
     <div class="TheFirstviewTransition" v-if='!killed'>
       <img :src="LogoImage" alt="" class="TheLoading_Logo_Image">
       <!-- <BarLoader class="BarLoader" color="#282828" height=1></BarLoader> -->
-      <SquareLoader size=24 class="Loader"></SquareLoader>
+      <SquareLoader size=20 class="Loader"></SquareLoader>
     </div>
   </div>
 </template>

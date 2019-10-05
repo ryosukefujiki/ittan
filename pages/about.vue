@@ -14,14 +14,14 @@
         <label>
           お名前
           <br />
-          <input type="text" name="name" v-model="name" required="required"/>
+          <input type="text" name="name" v-model="name" required="required" />
         </label>
       </p>
       <p class="TheText FadeIn">
         <label>
           Email
           <br />
-          <input type="email" v-model="email" name="email" required="required"/>
+          <input type="email" v-model="email" name="email" required="required" />
         </label>
       </p>
       <p class="TheText FadeIn">
@@ -39,12 +39,15 @@
     <div>
       <!-- <p class="TheText FadeIn" v-if="isSubmit == true">Thanks!</p> -->
       <p class="TheText FadeIn" v-show="isSubmit == true">Thanks! 無事にお問い合わせ内容を受け取りました。</p>
-      <p class="TheText FadeIn ErroeText" v-show="submitFalse == true">申し訳ございません。お問い合わせ内容を受け取ることができませんでした。<br>もう一度、時間を置いてお問い合わせ下さい。</p>
+      <p class="TheText FadeIn ErroeText" v-show="submitFalse == true">
+        申し訳ございません。お問い合わせ内容を受け取ることができませんでした。
+        <br />もう一度、時間を置いてお問い合わせ下さい。
+      </p>
     </div>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="content"></textarea>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="content"></textarea>
     </form>
     <!-- <p class="TheText TheAbout_Text FadeIn">
       E-mail : ittan.office@gmail.com
@@ -53,17 +56,17 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
     return {
       AboutImage: "/About/ittan.png",
-      name: '',
-      email: '',
-      content: '',
+      name: "",
+      email: "",
+      content: "",
       isSubmit: false,
-      submitFalse: false,
+      submitFalse: false
     };
   },
   components: {},
@@ -97,32 +100,36 @@ export default {
       });
     },
     onSubmit() {
-      const params = new URLSearchParams()
+      const params = new URLSearchParams();
 
-      params.append('form-name', 'contact') // Forms使うのに必要
-      params.append('name', this.name)
-      params.append('email', this.email)
-      params.append('content', this.content)
+      params.append("form-name", "contact"); // Forms使うのに必要
+      params.append("お名前", this.name);
+      params.append("メールアドレス", this.email);
+      params.append("お問い合わせ内容", this.content);
 
-    //   axios
-    //     .post('/', params)
-    //     .then(() => {
-    //       console.log("送信完了")
-    //       console.log(this.isSubmit)
-    //       this.isSubmit = true
-    //       this.submitFalse = true
-    //       console.log(this.isSubmit)
-    //     })
-        axios.post('/', params).then((response => {
-          console.log(response)
-          if (response['status']== 200){
-            console.log("送信完了")
-            this.isSubmit = true
-          }else{
-             console.log("送信失敗")
-             this.submitFalse = true
-          }
-        }))
+      //   axios
+      //     .post('/', params)
+      //     .then(() => {
+      //       console.log("送信完了")
+      //       console.log(this.isSubmit)
+      //       this.isSubmit = true
+      //       this.submitFalse = true
+      //       console.log(this.isSubmit)
+      //     })
+      axios.post("/", params)
+        .then(function(response) {
+            if (response["status"] == 200) {
+                console.log("送信完了");
+                this.isSubmit = true;
+            } else {
+                console.log("送信失敗");
+                this.submitFalse = true;
+            }
+        }).catch(function(error) {
+            console.log("送信失敗");
+            console.log(error)
+            this.submitFalse = true;
+        });
     }
   },
   watch: {
@@ -198,7 +205,6 @@ input:focus {
 button {
   outline: 0;
   font-family: "Bodoni";
-  border: 1px solid #989898;
   background: #fff;
   padding-top: 4px;
   font-size: 14px;
@@ -211,6 +217,9 @@ button {
   color: #282828;
   cursor: pointer;
   margin-bottom: 20px;
+  border: none;
+  border: 1px solid #ffffff;
+  border-bottom: 1px solid #989898;
 }
 button:hover {
   background: #282828;
@@ -220,8 +229,8 @@ button:hover {
 .ButtonText {
   text-align: center;
 }
-.ErroeText{
-    color: #CF6262;
+.ErroeText {
+  color: #cf6262;
 }
 
 @media screen and (min-width: 480px) {

@@ -99,10 +99,6 @@ export default {
         );
       });
     },
-    errorPrint(){
-        console.log("errorPrint")
-        this.submitFalse = true;
-    },
     onSubmit() {
       const params = new URLSearchParams();
 
@@ -111,15 +107,6 @@ export default {
       params.append("email", this.email);
       params.append("content", this.content);
 
-      //   axios
-      //     .post('/', params)
-      //     .then(() => {
-      //       console.log("送信完了")
-      //       console.log(this.isSubmit)
-      //       this.isSubmit = true
-      //       this.submitFalse = true
-      //       console.log(this.isSubmit)
-      //     })
        let self = this
        axios.post("/", params)
         .then(function(response) {
@@ -136,28 +123,6 @@ export default {
             console.log("送信失敗");
         })
     },
-    // async postForm(){
-    //     axios.post("/", params)
-    //     .then(function(response) {
-    //         if (response["status"] == 200) {
-    //             this.isSubmit = true;
-    //             console.log("送信完了");
-    //         } else {
-    //             // this.flagErrorResponse = true;
-    //             console.log("送信失敗");
-    //         }
-    //     }).catch(function(error) {
-    //         // this.errorPrint();
-    //         // this.flagErrorResponse = true
-    //         console.log("送信失敗");
-    //         console.log(error)
-    //         // this.submitFalse = true;
-    //     });
-    // },
-    // check(){
-    //       this.errorPrint()
-    //   }
-    // }
   },
   watch: {
     async entered(val) {
@@ -209,6 +174,7 @@ input {
   color: #aaa;
   /* border:solid 1px #ccc; */
   margin: 0 0 20px;
+  
 }
 textarea {
   resize: vertical;

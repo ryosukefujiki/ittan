@@ -90,7 +90,7 @@ html,body{
 }
 .page-enter, .page-leave-active {
   opacity: 0;
-  /* filter: blur(4px); */
+  filter: blur(2px);
 }
 
 

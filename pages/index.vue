@@ -1,8 +1,8 @@
 <template>
   <div class="TheHome">
-    <a class="TheHome_Work_Countainer" id="meta-window" @click.native="routing('meta-window',$event)">
+    <a class="TheHome_Work_Countainer" id="meta-window" @click.native="routing('meta-window')">
       <!-- <transition> -->
-        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
+        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn" @click.native="routing('meta-window',$event)">
       <!-- </transition> -->
       <h3 class="TheHome_Work_Heading FadeIn">Meta Window</h3>
     </a>
@@ -38,10 +38,10 @@ export default {
     this.fadeIn()
   },
   methods: {
-    async routing(url,event){
-      console.log(event.path[1].id)
-      console.log(url)
-      const element_id = "#" + event.path[1].id
+    async routing(url){
+      // console.log(event.path[1].id)
+      // console.log(url)
+      // const element_id = "#" + event.path[1].id
       // requestAnimationFrame(() => {
       //   TweenMax.to(
       //     element_id,
@@ -109,6 +109,7 @@ export default {
   display: block;
   cursor: pointer;
   margin-bottom: 32px;
+  background: red;
 }
 .TheHome_Work_Heading{
   font-family: 'Bodoni';

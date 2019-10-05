@@ -38,6 +38,9 @@ export default {
   width: 100%; 
   padding: 80px 20px 0px 20px;
 }
+.TheHome_Work_Countainer{
+  cursor: pointer;
+}
 .TheHome_Work_Heading{
   font-family: 'Bodoni';
   font-weight: normal;

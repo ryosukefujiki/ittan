@@ -70,6 +70,12 @@ html,body{
   line-height: 28px;
 }
 
+::selection {
+    background: #282828;
+    color: #fff;
+}
+
+
 
 html {
   /* font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

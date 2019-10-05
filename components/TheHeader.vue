@@ -47,6 +47,7 @@ export default {
   text-decoration: none;
   color: #282828;
   padding-top: 14px;
+  cursor: pointer;
 }
 .TheHeader_Logo{
   cursor: pointer;

@@ -2,7 +2,7 @@
   <div class="TheFirstview" v-if='!showFlag'>
     <div class="TheFirstviewTransition" v-if='!killed'>
       <img :src="LogoImage" alt="" class="TheLoading_Logo_Image">
-      <BarLoader class="BarLoader" color="#282828" height=1></BarLoader>
+      <BarLoader class="BarLoader" color="#282828"></BarLoader>
     </div>
   </div>
 </template>
@@ -191,6 +191,7 @@ export default {
 .BarLoader{
   margin: 0 auto;
   width: 52px;
+  height: 1px;
 }
 </style>
 

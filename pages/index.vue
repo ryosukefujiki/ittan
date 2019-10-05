@@ -106,6 +106,7 @@ export default {
   margin: 0 auto;
 }
 .TheHome_Work_Countainer{
+  display: block;
   cursor: pointer;
   margin-bottom: 32px;
 }
@@ -114,9 +115,6 @@ export default {
   font-weight: normal;
   font-size: 16px;
   margin-top: 8px;
-}
-p{
-  /* font-family: 'aone'; */
 }
 .TheHome_Work_Image{
   width: 100%;  

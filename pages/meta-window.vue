@@ -102,7 +102,22 @@ export default {
 }
 .TheWork_Countainer{
   width: 720px;
-  padding: 20px 20px 120px 20px;
+  padding: 40px 20px 120px 20px;
+}
+.TheWork_Heading{
+  font-size: 32px;
+}
+.TheWork_Time{
+  font-size: 20px;
+  color: #646464;
+  padding-top: 10px;
+}
+.TheWork_Text{
+  margin-bottom: 20px;
+}
+.TheWork_Image{
+  width: 100%;
+  margin-bottom: 20px;
 }
 }
 

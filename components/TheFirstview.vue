@@ -83,11 +83,11 @@ export default {
       //   },0.04)
       // })
       requestAnimationFrame(() => {
-        TweenMax.to(".TheFirstviewTransition", 0.2, {
+        TweenMax.to(".TheFirstview", 0.4, {
           opacity: 0,
-          filter: "blur(4px)",
+          filter: "blur(5px)",
           ease: Expo.easeIn
-        },0.04)
+        })
       })
       // await this.$delay(3000);
       //  requestAnimationFrame(() => {

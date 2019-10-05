@@ -63,6 +63,10 @@ export default {
 .TheHome{
   width: 100%; 
   padding: 80px 20px 120px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 .TheHome_Work_Countainer{
   cursor: pointer;
@@ -79,6 +83,33 @@ p{
 }
 .TheHome_Work_Image{
   width: 100%;  
+}
+
+@media screen and (min-width:480px) { 
+    /*　画面サイズが480pxからはここを読み込む　*/
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  /* .TheHome{
+    width: 720px; 
+    padding: 200px 20px 120px 20px;
+  } */
+}
+@media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む　*/
+.TheHome{
+  width: 800px; 
+  padding: 160px 20px 120px 20px;
+}
+.TheHome_Work_Heading{
+  font-family: 'Bodoni';
+  font-weight: normal;
+  font-size: 24px;
+  margin-top: 8px;
+}
+.TheHome_Work_Countainer{
+  margin-bottom: 64px;
+}
 }
 
 

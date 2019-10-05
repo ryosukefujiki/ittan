@@ -109,7 +109,6 @@ export default {
   display: block;
   cursor: pointer;
   margin-bottom: 32px;
-  background: red;
 }
 .TheHome_Work_Heading{
   font-family: 'Bodoni';

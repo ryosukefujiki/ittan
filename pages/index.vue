@@ -1,6 +1,6 @@
 <template>
   <div class="TheHome">
-    <div class="TheHome_Work_Countainer">
+    <div class="TheHome_Work_Countainer" @click="routing('meta-window')">
       <img :src="image01" alt="" class="TheHome_Work_Image">
       <h3 class="TheHome_Work_Heading">Meta-Window</h3>
     </div>
@@ -18,7 +18,18 @@ export default {
   },
   components: {
     Logo
-  }
+  },
+  methods: {
+    routing(url){
+      this.$router.push(url)
+      // if(this.$route.path != '/'){
+      //   this.$store.commit('homeClick')
+      // }
+      // if (this.headerActive == true){
+      //   this.toggleMenu()
+      // }
+    },
+  },
 }
 </script>
 

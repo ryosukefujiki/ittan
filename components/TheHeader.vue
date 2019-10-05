@@ -3,8 +3,9 @@
     <h1 class="TheHeader_Logo" @click="routing('/')">
       <img :src="LogoImage" alt="" class="TheHeader_Logo_Image">
     </h1>
-    <a class="TheHeader_Link" @click="routing('/about')" v-if="this.$route.path == '/'">About Us</a>
     <a class="TheHeader_Link" @click="routing('/')" v-if="this.$route.path == '/about'">Works</a>
+    <a class="TheHeader_Link" @click="routing('/about')" v-else>About Us</a>
+    <!-- <a class="TheHeader_Link" @click="routing('/about')" v-if="this.$route.path == '/'">About Us</a> -->
   </header>
 </template>
 <script>

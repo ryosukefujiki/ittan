@@ -38,10 +38,10 @@
 
     <div>
       <!-- <p class="TheText FadeIn" v-if="isSubmit == true">Thanks!</p> -->
-      <p class="TheText FadeIn" v-show="isSubmit == true">Thanks! 無事にお問い合わせ内容を受け取りました。</p>
+      <p class="TheText FadeIn" v-show="isSubmit == true">ありがとうございます。 無事にお問い合わせ内容を受け取りました。</p>
       <p class="TheText FadeIn ErroeText" v-show="submitFalse == true">
         申し訳ございません。お問い合わせ内容を受け取ることができませんでした。
-        <br />もう一度、時間を置いてお問い合わせ下さい。
+        <br />もう一度、ネットワーク環境を確認し、時間を置いてお問い合わせ下さい。
       </p>
     </div>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
@@ -126,6 +126,7 @@ export default {
             if (response["status"] == 200) {
                 self.isSubmit = true;
                 console.log("送信完了");
+                self.submitFalse = false
             } else {
                 self.submitFalse = true
                 console.log("送信失敗");

@@ -1,30 +1,23 @@
 <template>
   <div class="TheFirstview" v-if='!showFlag'>
-    <!-- <div class="TheFirstviewTransition" v-if='!killed'></div>
-    <div class="TheFirstviewTransition" v-if='!killed'></div> -->
     <div class="TheFirstviewTransition" v-if='!killed'>
-    <!-- <p class="TheFirstview_Text TheFirstview_PercentText">{{number}}%</p> -->
-      <!-- <p class="TheFirstview_Text TheFirstview_PercentText">
-        <img :src="logoImg" alt="" class="TheFirstview_Logo"><img :src="nameImg" alt="" class="TheFirstview_Name">
-      </p>-->
-      <TheLogo></TheLogo>
-      <p class="TheFirstview_Text">{{loadingText}}</p>
-      <BarLoader class="BarLoader" color="#d1d1d1"></BarLoader>
+      <img :src="LogoImage" alt="" class="TheLoading_Logo_Image">
+      <BarLoader class="BarLoader" color="#282828" height=1></BarLoader>
     </div>
-    <!-- <div class="TheFirstviewTransition" v-if='!killed'></div>
-    <div class="TheFirstviewTransition" v-if='!killed'></div> -->
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
 import { BarLoader } from '@saeris/vue-spinners'
+import { CircleLoader } from '@saeris/vue-spinners'
 
 // import TheLogo from '~/components/TheLogo.vue'
 
 export default {
   data(){
     return {
+      LogoImage: "/All/logo.png",
       number: 0,
       intervalId: undefined,
       // logoImg: "/home/logo.png",
@@ -37,6 +30,7 @@ export default {
   },
   components: {
     BarLoader,
+    CircleLoader
   },
   computed: {
     ...mapGetters({
@@ -69,42 +63,11 @@ export default {
     async completed(val) {
       requestAnimationFrame(() => {
         TweenMax.to(
-          ".TheFirstview_Logo",
-          1,
-          {
-            x: 0,
-            opacity: 1,
-            ease: Expo.easeOut,
-            startAt: {
-              x: "40px",
-            }
-          },
-          0.1
-        );
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(
           ".BarLoader",
           1,
           {
             opacity: 0,
             ease: Expo.easeOut,
-          },
-          0.1
-        );
-      });
-      requestAnimationFrame(() => {
-        TweenMax.to(
-          ".TheFirstview_Name",
-          1,
-          {
-            x: 0,
-            opacity: 1,
-            display: "inline-block",
-            ease: Expo.easeOut,
-            startAt: {
-              x: -20,
-            },
           },
           0.1
         );
@@ -120,8 +83,9 @@ export default {
       //   },0.04)
       // })
       requestAnimationFrame(() => {
-        TweenMax.staggerTo(".TheFirstviewTransition", 0.2, {
+        TweenMax.to(".TheFirstviewTransition", 0.2, {
           opacity: 0,
+          filter: "blur(4px)",
           ease: Expo.easeIn
         },0.04)
       })
@@ -143,6 +107,11 @@ export default {
 </script>
 
 <style>
+.TheLoading_Logo_Image{
+  width: 48px;
+  margin-bottom: 12px;
+}
+
 
 .TheFirstview{
   width: 100%;
@@ -214,6 +183,7 @@ export default {
 
 .BarLoader{
   margin: 0 auto;
+  width: 52px;
 }
 </style>
 

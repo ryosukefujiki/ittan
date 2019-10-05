@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheFirstview></TheFirstview>
     <TheHeader></TheHeader>
     <nuxt />
     <TheFooter></TheFooter>
@@ -10,6 +11,8 @@
 import TheFirstview from "~/components/TheFirstview.vue";
 import TheHeader from "~/components/TheHeader.vue";
 import TheFooter from "~/components/TheFooter.vue";
+import { TweenMax, Elastic, Expo, Back } from "gsap";
+
 export default {
   mounted() {
     if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {

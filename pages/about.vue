@@ -1,14 +1,14 @@
 <template>
   <div class="TheAbout">
-    <h2 class="TheAbout_Heading">About Us</h2>
-    <p class="TheText TheAbout_Text">
+    <h2 class="TheAbout_Heading" @click="hoge">About Us</h2>
+    <p class="TheText TheAbout_Text Text_FadeIn">
       "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ集団。<br>
       2019年に岸裕真・芳賀健・中村直人を中心に結成され、
       同年10月から国内ブランドとの共同開発を開始。日本伝統の文化に根ざした新しい表現のために、デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
     </p>
-    <img :src="AboutImage" alt="ittan" class="TheAbout_Image" />
-     <h2 class="TheAbout_Heading">Contact</h2>
-     <p class="TheText TheAbout_Text">
+    <img :src="AboutImage" alt="ittan" class="TheAbout_Image Text_FadeIn" />
+     <h2 class="TheAbout_Heading Text_FadeIn">Contact</h2>
+     <p class="TheText TheAbout_Text Text_FadeIn">
       E-mail : ittan.office@gmail.com
     </p>
   </div>
@@ -22,7 +22,25 @@ export default {
   },
   components: {},
   methods: {
-    hoge() {}
+    hoge() {
+    //   await this.$delay(120);
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo(
+          ".Text_FadeIn",
+          5,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            startAt: {
+              y: "40px",
+              opacity: 0
+            }
+          },
+          0.1
+        );
+      });
+    }
   }
 };
 </script>

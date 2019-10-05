@@ -1,7 +1,9 @@
 <template>
   <div class="TheHome">
-    <h2>meta-window</h2>
-    <p>こんにちは</p>
+    <div class="TheHome_Work_Countainer">
+      <img :src="image01" alt="" class="TheHome_Work_Image">
+      <h3 class="TheHome_Work_Heading">Meta-Window</h3>
+    </div>
   </div>
 </template>
 
@@ -9,6 +11,11 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+   data() {
+    return {
+      image01: "/ALL/test_image.jpg",
+    }
+  },
   components: {
     Logo
   }
@@ -16,11 +23,20 @@ export default {
 </script>
 
 <style>
-h2{
+.TheHome{
+  width: 100%; 
+  padding: 80px 20px 0px 20px;
+}
+.TheHome_Work_Heading{
   font-family: 'Bodoni';
   font-weight: normal;
+  font-size: 16px;
+  margin-top: 8px;
 }
 p{
   /* font-family: 'aone'; */
+}
+.TheHome_Work_Image{
+  width: 100%;  
 }
 </style>

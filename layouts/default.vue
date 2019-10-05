@@ -5,9 +5,30 @@
 </template>
 
 <style>
+@font-face {
+  font-family: Bodoni;
+  src: url("~assets/Font/bodoni.woff") format("woff"),
+    url("~assets/Font/bodoni.ttf") format("truetype"),
+    url("~assets/Font/bodoni.otf") format("otf");
+}
+
+/* @font-face {
+  font-family: aone;
+  src: url("~assets/Font/aone.woff") format("woff"),
+    url("~assets/Font/aone.ttf") format("truetype"),
+    url("~assets/Font/aone.otf") format("otf");
+} */
+
+
+html,body{
+  width: 100%;
+}
+
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif; */
+  font-family: 'bodoni',"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

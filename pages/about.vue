@@ -119,16 +119,17 @@ export default {
       axios.post("/", params)
         .then(function(response) {
             if (response["status"] == 200) {
-                console.log("送信完了");
                 this.isSubmit = true;
+                console.log("送信完了");
             } else {
-                console.log("送信失敗");
                 this.submitFalse = true;
+                console.log("送信失敗");
             }
         }).catch(function(error) {
+            this.submitFalse = true;
             console.log("送信失敗");
             console.log(error)
-            this.submitFalse = true;
+            // this.submitFalse = true;
         });
     }
   },

@@ -9,7 +9,7 @@
     <img :src="AboutImage" alt="ittan" class="TheAbout_Image FadeIn" />
     <h2 class="TheAbout_Heading FadeIn">Contact</h2>
 
-    <form name="contact" v-if="isSubmit === false" @submit.prevent="onSubmit">
+    <form name="contact" v-if="isSubmit == false" @submit.prevent="onSubmit">
       <p class="TheText TheContact_Text FadeIn">
         <label>
           お名前
@@ -37,7 +37,9 @@
     </form>
 
     <div>
-      <p class="TheText FadeIn" v-if="isSubmit === true">Thanks!</p>
+      <!-- <p class="TheText FadeIn" v-if="isSubmit == true">Thanks!</p> -->
+      <p class="TheText FadeIn" v-show="isSubmit == true">Thanks! 無事にお問い合わせ内容を受け取りました。</p>
+      <p class="TheText FadeIn ErroeText" v-show="submitFalse == true">申し訳ございません。お問い合わせ内容を受け取ることができませんでした。<br>もう一度、時間を置いてお問い合わせ下さい。</p>
     </div>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
@@ -60,7 +62,8 @@ export default {
       name: '',
       email: '',
       content: '',
-      isSubmit: false
+      isSubmit: false,
+      submitFalse: false,
     };
   },
   components: {},
@@ -97,16 +100,29 @@ export default {
       const params = new URLSearchParams()
 
       params.append('form-name', 'contact') // Forms使うのに必要
-
       params.append('name', this.name)
       params.append('email', this.email)
       params.append('content', this.content)
 
-      axios
-        .post('/', params)
-        .then(() => {
-          this.isSubmit = true
-        })
+    //   axios
+    //     .post('/', params)
+    //     .then(() => {
+    //       console.log("送信完了")
+    //       console.log(this.isSubmit)
+    //       this.isSubmit = true
+    //       this.submitFalse = true
+    //       console.log(this.isSubmit)
+    //     })
+        axios.post('/', params).then((response => {
+          console.log(response)
+          if (response['status']== 200){
+            console.log("送信完了")
+            this.isSubmit = true
+          }else{
+             console.log("送信失敗")
+             this.submitFalse = true
+          }
+        }))
     }
   },
   watch: {
@@ -193,6 +209,8 @@ button {
     "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   transition: 0.2s;
   color: #282828;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 button:hover {
   background: #282828;
@@ -201,6 +219,9 @@ button:hover {
 }
 .ButtonText {
   text-align: center;
+}
+.ErroeText{
+    color: #CF6262;
 }
 
 @media screen and (min-width: 480px) {

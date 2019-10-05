@@ -59,6 +59,7 @@ export default {
   display: block;
   text-decoration: none;
   color: #282828;
+  /* color: #ffffff; */
   padding-top: 14px;
   cursor: pointer;
   transition: 0.2s;

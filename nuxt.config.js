@@ -26,7 +26,11 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+ loading: {
+  color: '#282828',
+  height: '1px'
+},
+
   /*
   ** Global CSS
   */

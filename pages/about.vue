@@ -120,15 +120,19 @@ export default {
       //       this.submitFalse = true
       //       console.log(this.isSubmit)
       //     })
+       let self = this
        axios.post("/", params)
         .then(function(response) {
             if (response["status"] == 200) {
-                this.isSubmit = true;
+                self.isSubmit = true;
                 console.log("送信完了");
             } else {
-                this.submitFalse = true
+                self.submitFalse = true
                 console.log("送信失敗");
             }
+        }).catch(function(error) {
+            self.submitFalse = true
+            console.log("送信失敗");
         })
     },
     // async postForm(){

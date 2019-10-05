@@ -73,7 +73,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  padding: 24px 120px 0px 120px;
+  padding: 24px 240px 0px 240px;
   display: flex;
   justify-content: space-between;
   width: 100%;

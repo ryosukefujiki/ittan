@@ -31,7 +31,7 @@ export default {
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
           ".FadeIn",
-          5,
+          4,
           {
             y: 0,
             opacity: 1,
@@ -63,9 +63,6 @@ export default {
 .TheHome{
   width: 100%; 
   padding: 80px 20px 120px 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   margin: 0 auto;
 }
 .TheHome_Work_Countainer{

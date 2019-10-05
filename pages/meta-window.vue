@@ -50,12 +50,16 @@ export default {
 </script>
 
 <style>
+.TheWork{
+  height: 100%;
+}
 .TheWork_HeadImage{
   width: 100%;
 }
 .TheWork_Countainer{
   width: 100%;
   padding: 20px 20px 120px 20px;
+  margin: 0 auto;
 }
 .TheWork_Heading_Countainer{
   margin-bottom: 20px;
@@ -79,4 +83,28 @@ export default {
   width: 100%;
   margin-bottom: 12px;
 }
+
+@media screen and (min-width:480px) { 
+    /*　画面サイズが480pxからはここを読み込む　*/
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  /* .TheHome{
+    width: 720px; 
+    padding: 200px 20px 120px 20px;
+  } */
+}
+@media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む　*/
+.TheWork_HeadImage{
+  /* width: 100%; */
+  height: 720px;
+}
+.TheWork_Countainer{
+  width: 720px;
+  padding: 20px 20px 120px 20px;
+}
+}
+
+
 </style>

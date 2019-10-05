@@ -1,6 +1,6 @@
 <template>
   <div class="TheAbout">
-    <h2 class="TheAbout_Heading FadeIn" @click="hoge">About Us</h2>
+    <h2 class="TheAbout_Heading FadeIn">About Us</h2>
     <p class="TheText TheAbout_Text FadeIn">
       "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ集団。<br>
       2019年に岸裕真・芳賀健・中村直人を中心に結成され、同年10月から国内ブランドとの共同開発を開始。
@@ -14,6 +14,8 @@
   </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   data() {
     return {
@@ -22,6 +24,17 @@ export default {
   },
   components: {},
   mounted() {
+      this.fadeIn()
+  },
+  computed: {
+    ...mapGetters({
+      killed: 'firstview/killed',
+      completed: 'firstview/completed',
+      entered: 'firstview/entered'
+    })
+  },
+  methods: {
+    fadeIn() {
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
           ".FadeIn",
@@ -38,13 +51,23 @@ export default {
           0.1
         );
       });
-  },
-  methods: {
-    hoge() {
-    //   await this.$delay(120);
-      
     }
-  }
+  },
+  watch: {
+    async entered(val) {
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".FadeIn",
+          0.1,
+          {
+            opacity: 0,
+            ease: Expo.easeOut,
+          });
+      });
+      await this.$delay(2000)
+      this.fadeIn()
+    }
+  },
 };
 </script>
 

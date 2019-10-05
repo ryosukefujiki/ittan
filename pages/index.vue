@@ -16,6 +16,7 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import {mapGetters} from 'vuex'
 
 export default {
    data() {
@@ -27,7 +28,26 @@ export default {
   components: {
     Logo
   },
+   computed: {
+    ...mapGetters({
+      killed: 'firstview/killed',
+      entered: 'firstview/entered',
+    })
+  },
   mounted() {
+    this.fadeIn()
+  },
+  methods: {
+    routing(url){
+      this.$router.push(url)
+      // if(this.$route.path != '/'){
+      //   this.$store.commit('homeClick')
+      // }
+      // if (this.headerActive == true){
+      //   this.toggleMenu()
+      // }
+    },
+    fadeIn(){
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
           ".FadeIn",
@@ -44,17 +64,22 @@ export default {
           0.1
         );
       });
+    }
   },
-  methods: {
-    routing(url){
-      this.$router.push(url)
-      // if(this.$route.path != '/'){
-      //   this.$store.commit('homeClick')
-      // }
-      // if (this.headerActive == true){
-      //   this.toggleMenu()
-      // }
-    },
+  watch: {
+    async entered(val) {
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".FadeIn",
+          0.1,
+          {
+            opacity: 0,
+            ease: Expo.easeOut,
+          });
+      });
+      await this.$delay(2000)
+      this.fadeIn()
+    }
   },
 }
 </script>

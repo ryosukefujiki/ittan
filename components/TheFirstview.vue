@@ -85,7 +85,7 @@ export default {
       requestAnimationFrame(() => {
         TweenMax.to(".TheFirstview", 0.4, {
           opacity: 0,
-          filter: "blur(5px)",
+          // filter: "blur(5px)",
           ease: Expo.easeIn
         })
       })

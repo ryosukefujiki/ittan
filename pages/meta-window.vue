@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import Logo from '~/components/Logo.vue'
 
 export default {
@@ -29,6 +30,17 @@ export default {
     Logo
   },
   mounted() {
+      this.fadeIn()
+  },
+  computed: {
+    ...mapGetters({
+      killed: 'firstview/killed',
+      completed: 'firstview/completed',
+      entered: 'firstview/entered'
+    })
+  },
+  methods: {
+    fadeIn(){
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
           ".FadeIn",
@@ -45,6 +57,22 @@ export default {
           0.1
         );
       });
+    }
+  },
+  watch: {
+    async entered(val) {
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".FadeIn",
+          0.1,
+          {
+            opacity: 0,
+            ease: Expo.easeOut,
+          });
+      });
+      await this.$delay(2000)
+      this.fadeIn()
+    }
   },
 }
 </script>

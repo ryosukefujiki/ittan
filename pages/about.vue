@@ -99,6 +99,10 @@ export default {
         );
       });
     },
+    errorPrint(){
+        console.log("errorPrint")
+        this.submitFalse = true;
+    },
     onSubmit() {
       const params = new URLSearchParams();
 
@@ -126,7 +130,7 @@ export default {
                 console.log("送信失敗");
             }
         }).catch(function(error) {
-            this.submitFalse = true;
+            this.errorPrint();
             console.log("送信失敗");
             console.log(error)
             // this.submitFalse = true;

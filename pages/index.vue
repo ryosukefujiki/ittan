@@ -1,6 +1,6 @@
 <template>
   <div class="TheHome">
-    <a class="TheHome_Work_Countainer" id="meta-window" @click="routing('meta-window',$event)">
+    <a class="TheHome_Work_Countainer" id="meta-window" @click.native="routing('meta-window',$event)">
       <!-- <transition> -->
         <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
       <!-- </transition> -->

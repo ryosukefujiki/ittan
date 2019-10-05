@@ -1,11 +1,13 @@
 <template>
   <header class="TheHeader">
+    <div class="TheHeader_Countainer">
     <h1 class="TheHeader_Logo" @click="routing('/')">
       <img :src="LogoImage" alt="" class="TheHeader_Logo_Image">
     </h1>
     <a class="TheHeader_Link" @click="routing('/')" v-if="this.$route.path == '/about'">Works</a>
     <a class="TheHeader_Link" @click="routing('/about')" v-else>About Us</a>
     <!-- <a class="TheHeader_Link" @click="routing('/about')" v-if="this.$route.path == '/'">About Us</a> -->
+    </div>
   </header>
 </template>
 <script>
@@ -37,11 +39,22 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
+}
+.TheHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+.TheHeader_Countainer{
   padding: 24px 24px 0px 24px;
   display: flex;
   justify-content: space-between;
   width: 100%;
+  display: flex;
 }
+
 .TheHeader_Link{
   display: block;
   text-decoration: none;
@@ -73,10 +86,14 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  padding: 24px 240px 0px 240px;
+  
+}
+.TheHeader_Countainer{
+  width: 720px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px 0px 20px;
 }
 }
 

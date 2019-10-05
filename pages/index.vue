@@ -1,8 +1,8 @@
 <template>
   <div class="TheHome">
-    <a class="TheHome_Work_Countainer" id="meta-window" @click.native="routing('meta-window')">
+    <a class="TheHome_Work_Countainer" id="meta-window" @click="routing('/meta-window')">
       <!-- <transition> -->
-        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn" @click.native="routing('meta-window',$event)">
+        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
       <!-- </transition> -->
       <h3 class="TheHome_Work_Heading FadeIn">Meta Window</h3>
     </a>

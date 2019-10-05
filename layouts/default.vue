@@ -67,6 +67,9 @@ export default {
 html,body{
   width: 100%;
 }
+.default {
+  height: 100%;
+}
 
 .TheText{
   font-size: 14px;

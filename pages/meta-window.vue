@@ -1,6 +1,7 @@
 <template>
   <div class="TheWork">
     <img :src="image01" alt="" class="TheWork_HeadImage">
+    <!-- <div class="TheWork_HeadImage"></div> -->
     <div class="TheWork_Countainer">
       <div class="TheWork_Heading_Countainer">
        <h1 class="TheWork_Heading FadeIn">Meta Window</h1>
@@ -83,7 +84,9 @@ export default {
 }
 .TheWork_HeadImage{
   width: 100%;
+  
   object-fit: cover;
+  background: url("/ALL/test_image.jpg");
 }
 .TheWork_Countainer{
   width: 100%;
@@ -126,8 +129,10 @@ export default {
 @media screen and (min-width:1024px) {
     /*　画面サイズが1024pxからはここを読み込む　*/
 .TheWork_HeadImage{
-  /* width: 100%; */
-  height: 720px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  /* height: 20%; */
 }
 .TheWork_Countainer{
   width: 720px;

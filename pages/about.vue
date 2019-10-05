@@ -120,21 +120,27 @@ export default {
       //       this.submitFalse = true
       //       console.log(this.isSubmit)
       //     })
+      var flagErrorResponse = false
       axios.post("/", params)
         .then(function(response) {
             if (response["status"] == 200) {
                 this.isSubmit = true;
                 console.log("送信完了");
             } else {
-                this.submitFalse = true;
+                // this.flagErrorResponse = true;
                 console.log("送信失敗");
             }
         }).catch(function(error) {
-            this.errorPrint();
+            // this.errorPrint();
+            // this.flagErrorResponse = true
             console.log("送信失敗");
             console.log(error)
             // this.submitFalse = true;
         });
+      console.log("hoge")
+      if(flagErrorResponse == true){
+          this.errorPrint()
+      }
     }
   },
   watch: {

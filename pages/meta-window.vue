@@ -55,6 +55,7 @@ export default {
 }
 .TheWork_HeadImage{
   width: 100%;
+  object-fit: cover;
 }
 .TheWork_Countainer{
   width: 100%;

@@ -1,11 +1,15 @@
 <template>
   <div>
+    <TheHeader></TheHeader>
     <nuxt />
+    <TheFooter></TheFooter>
   </div>
 </template>
 
 <script>
 import TheFirstview from "~/components/TheFirstview.vue";
+import TheHeader from "~/components/TheHeader.vue";
+import TheFooter from "~/components/TheFooter.vue";
 export default {
   mounted() {
     if (window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
@@ -30,6 +34,8 @@ export default {
     }
   },
   components: {
+    TheHeader,
+    TheFooter,
     TheFirstview,
   },
   data() {

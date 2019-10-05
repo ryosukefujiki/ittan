@@ -107,9 +107,9 @@ export default {
       const params = new URLSearchParams();
 
       params.append("form-name", "contact"); // Forms使うのに必要
-      params.append("お名前", this.name);
-      params.append("メールアドレス", this.email);
-      params.append("お問い合わせ内容", this.content);
+      params.append("name", this.name);
+      params.append("email", this.email);
+      params.append("content", this.content);
 
       //   axios
       //     .post('/', params)

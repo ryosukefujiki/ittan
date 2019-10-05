@@ -1,7 +1,9 @@
 <template>
   <div class="TheHome">
     <div class="TheHome_Work_Countainer" @click="routing('meta-window')">
-      <img :src="image01" alt="" class="TheHome_Work_Image">
+      <transition>
+        <img :src="image01" alt="" class="TheHome_Work_Image">
+      </transition>
       <h3 class="TheHome_Work_Heading">Meta-Window</h3>
     </div>
   </div>
@@ -53,4 +55,7 @@ p{
 .TheHome_Work_Image{
   width: 100%;  
 }
+
+
+
 </style>

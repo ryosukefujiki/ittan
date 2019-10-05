@@ -75,6 +75,14 @@ html,body{
     color: #fff;
 }
 
+.page-enter-active, .page-leave-active {
+  transition: 0.2s ease-in;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+  filter: blur(4px);
+}
+
 
 
 html {

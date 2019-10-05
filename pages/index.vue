@@ -8,7 +8,7 @@
     </div>
     <div class="TheHome_Work_Countainer FadeIn">
       <transition>
-        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image FadeIn">
+        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image_ComingSoon FadeIn">
       </transition>
     </div>
   </div>
@@ -79,6 +79,15 @@ p{
   /* font-family: 'aone'; */
 }
 .TheHome_Work_Image{
+  width: 100%;  
+  filter: drop-shadow(0px 0px 4px 0px rgba(118, 118, 118, 0.4));
+  transition: 0.2s;
+}
+.TheHome_Work_Image:hover{
+  filter: drop-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.4));
+  /* width: 102%;   */
+}
+.TheHome_Work_Image_ComingSoon{
   width: 100%;  
 }
 

@@ -61,6 +61,10 @@ export default {
   color: #282828;
   padding-top: 14px;
   cursor: pointer;
+  transition: 0.2s;
+}
+.TheHeader_Link:hover{
+  color: #949494;
 }
 .TheHeader_Logo{
   cursor: pointer;

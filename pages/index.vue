@@ -98,8 +98,8 @@ p{
 @media screen and (min-width:1024px) {
     /*　画面サイズが1024pxからはここを読み込む　*/
 .TheHome{
-  width: 800px; 
-  padding: 160px 20px 120px 20px;
+  width: 720px; 
+  padding: 140px 20px 120px 20px;
 }
 .TheHome_Work_Heading{
   font-family: 'Bodoni';
@@ -110,6 +110,7 @@ p{
 .TheHome_Work_Countainer{
   margin-bottom: 64px;
 }
+
 }
 
 

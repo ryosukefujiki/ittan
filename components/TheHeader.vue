@@ -56,5 +56,29 @@ export default {
   width: 48px;
 }
 
+@media screen and (min-width:480px) { 
+    /*　画面サイズが480pxからはここを読み込む　*/
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  /* .TheHome{
+    width: 720px; 
+    padding: 200px 20px 120px 20px;
+  } */
+}
+@media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む　*/
+.TheHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 24px 120px 0px 120px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+}
+
 
 </style>

@@ -2,13 +2,13 @@
   <div class="TheHome">
     <div class="TheHome_Work_Countainer" @click="routing('meta-window')">
       <transition>
-        <img :src="image01" alt="" class="TheHome_Work_Image">
+        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
       </transition>
-      <h3 class="TheHome_Work_Heading">Meta Window</h3>
+      <h3 class="TheHome_Work_Heading FadeIn">Meta Window</h3>
     </div>
-    <div class="TheHome_Work_Countainer">
+    <div class="TheHome_Work_Countainer FadeIn">
       <transition>
-        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image">
+        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image FadeIn">
       </transition>
     </div>
   </div>
@@ -26,6 +26,24 @@ export default {
   },
   components: {
     Logo
+  },
+  mounted() {
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo(
+          ".FadeIn",
+          5,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            startAt: {
+              y: "10px",
+              opacity: 0
+            }
+          },
+          0.1
+        );
+      });
   },
   methods: {
     routing(url){

@@ -3,14 +3,14 @@
     <img :src="image01" alt="" class="TheWork_HeadImage">
     <div class="TheWork_Countainer">
       <div class="TheWork_Heading_Countainer">
-       <h1 class="TheWork_Heading">Meta Window</h1>
-        <p class="TheWork_Time">2019.10.07</p>
+       <h1 class="TheWork_Heading FadeIn">Meta Window</h1>
+        <p class="TheWork_Time FadeIn">2019.10.07</p>
       </div>
-      <p class="TheText TheWork_Text">
+      <p class="TheText TheWork_Text FadeIn">
         深層学習によって高次元の空間に生み出されたHATRAという存在に、三次元空間のHATRAを求める人間が干渉していく様を探索する様とつながるための窓である。本作品に用いられたGANは深層学習の生成モデルの一種である。多様体仮説に基づき二次元データであるHATRAのこれまでのルックを元に、N次元空間においてドメインを構築する。鑑賞者の振る舞いは生成の種となり、ドメインにおける新たなHATRAの表現が探索されていく。人による干渉が行われると、ニューロンは活性化され具象化によって呼応しようとする。それに対し、不干渉はニューロンの動きを抑え、具象を忘却させていく。
       </p>
-      <img :src="image01" alt="" class="TheWork_Image">
-      <img :src="image02" alt="" class="TheWork_Image">
+      <img :src="image01" alt="" class="TheWork_Image FadeIn">
+      <img :src="image02" alt="" class="TheWork_Image FadeIn">
     </div>
   </div>
 </template>
@@ -27,7 +27,25 @@ export default {
   },
   components: {
     Logo
-  }
+  },
+  mounted() {
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo(
+          ".FadeIn",
+          4,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            startAt: {
+              y: "4px",
+              opacity: 0
+            }
+          },
+          0.1
+        );
+      });
+  },
 }
 </script>
 

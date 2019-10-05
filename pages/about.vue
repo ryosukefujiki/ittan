@@ -1,14 +1,14 @@
 <template>
   <div class="TheAbout">
-    <h2 class="TheAbout_Heading" @click="hoge">About Us</h2>
-    <p class="TheText TheAbout_Text Text_FadeIn">
+    <h2 class="TheAbout_Heading FadeIn" @click="hoge">About Us</h2>
+    <p class="TheText TheAbout_Text FadeIn">
       "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ集団。<br>
       2019年に岸裕真・芳賀健・中村直人を中心に結成され、
       同年10月から国内ブランドとの共同開発を開始。日本伝統の文化に根ざした新しい表現のために、デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
     </p>
-    <img :src="AboutImage" alt="ittan" class="TheAbout_Image Text_FadeIn" />
-     <h2 class="TheAbout_Heading Text_FadeIn">Contact</h2>
-     <p class="TheText TheAbout_Text Text_FadeIn">
+    <img :src="AboutImage" alt="ittan" class="TheAbout_Image FadeIn" />
+     <h2 class="TheAbout_Heading FadeIn">Contact</h2>
+     <p class="TheText TheAbout_Text FadeIn">
       E-mail : ittan.office@gmail.com
     </p>
   </div>
@@ -21,25 +21,28 @@ export default {
     };
   },
   components: {},
-  methods: {
-    hoge() {
-    //   await this.$delay(120);
+  mounted() {
       requestAnimationFrame(() => {
         TweenMax.staggerTo(
-          ".Text_FadeIn",
+          ".FadeIn",
           5,
           {
             y: 0,
             opacity: 1,
             ease: Elastic.easeOut.config(1, 0.3),
             startAt: {
-              y: "40px",
+              y: "10px",
               opacity: 0
             }
           },
           0.1
         );
       });
+  },
+  methods: {
+    hoge() {
+    //   await this.$delay(120);
+      
     }
   }
 };

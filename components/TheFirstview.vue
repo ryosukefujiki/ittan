@@ -2,7 +2,8 @@
   <div class="TheFirstview" v-if='!showFlag'>
     <div class="TheFirstviewTransition" v-if='!killed'>
       <img :src="LogoImage" alt="" class="TheLoading_Logo_Image">
-      <BarLoader class="BarLoader" color="#282828" height=1></BarLoader>
+      <!-- <BarLoader class="BarLoader" color="#282828" height=1></BarLoader> -->
+      <SquareLoader size=24 class="Loader"></SquareLoader>
     </div>
   </div>
 </template>
@@ -11,6 +12,7 @@
 import {mapGetters} from 'vuex'
 import { BarLoader } from '@saeris/vue-spinners'
 import { CircleLoader } from '@saeris/vue-spinners'
+import { SquareLoader } from '@saeris/vue-spinners'
 
 // import TheLogo from '~/components/TheLogo.vue'
 
@@ -30,7 +32,8 @@ export default {
   },
   components: {
     BarLoader,
-    CircleLoader
+    CircleLoader,
+    SquareLoader
   },
   computed: {
     ...mapGetters({
@@ -63,10 +66,25 @@ export default {
     async completed(val) {
       requestAnimationFrame(() => {
         TweenMax.to(
-          ".BarLoader",
+          ".Loader",
+          0.4,
+          {
+            display: "none",
+            opacity: 0,
+            ease: Expo.easeOut,
+          },
+          0.1
+        );
+      });
+      await this.$delay(400);
+      requestAnimationFrame(() => {
+        TweenMax.to(
+          ".TheLoading_Logo_Image",
           1,
           {
-            opacity: 0,
+            display: "block",
+            opacity: 1,
+            filter: "blur(0px)",
             ease: Expo.easeOut,
           },
           0.1
@@ -116,7 +134,9 @@ export default {
 .TheLoading_Logo_Image{
   width: 48px;
   margin-bottom: 12px;
-  /* filter: blur(1px); */
+  display: none;
+  opacity: 0;
+  filter: blur(4px);
 }
 
 

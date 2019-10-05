@@ -65,6 +65,11 @@ html,body{
   width: 100%;
 }
 
+.TheText{
+  font-size: 14px;
+  line-height: 28px;
+}
+
 
 html {
   /* font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -77,6 +82,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  color: #282828;
 }
 
 *,

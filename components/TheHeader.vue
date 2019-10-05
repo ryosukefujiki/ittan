@@ -28,7 +28,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  padding: 24px 20px 0px 20px;
+  padding: 24px 24px 0px 24px;
 }
 .TheHeader_Logo_Image{
   width: 48px;

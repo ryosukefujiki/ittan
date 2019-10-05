@@ -7,6 +7,10 @@
       同年10月から国内ブランドとの共同開発を開始。日本伝統の文化に根ざした新しい表現のために、デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
     </p>
     <img :src="AboutImage" alt="ittan" class="TheAbout_Image" />
+     <h2 class="TheAbout_Heading">Contact</h2>
+     <p class="TheText TheAbout_Text">
+      E-mail : ittan.office@gmail.com
+    </p>
   </div>
 </template>
 <script>
@@ -26,7 +30,7 @@ export default {
 <style>
 .TheAbout {
   width: 100%;
-  padding: 80px 20px 0px 20px;
+  padding: 80px 20px 120px 20px;
 }
 .TheAbout_Heading {
   font-family: "Bodoni";
@@ -41,5 +45,6 @@ export default {
 .TheAbout_Image {
   width: 100%;
   filter: drop-shadow(0px 0px 10px rgba(118,118,118,0.1));
+  margin-bottom: 32px;
 }
 </style>

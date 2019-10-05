@@ -1,13 +1,16 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        meta-window page
-      </h1>
-      <h2 class="subtitle">
-        ittan works
-      </h2>
+  <div class="TheWork">
+    <img :src="image01" alt="" class="TheWork_HeadImage">
+    <div class="TheWork_Countainer">
+      <div class="TheWork_Heading_Countainer">
+       <h1 class="TheWork_Heading">Meta Window</h1>
+        <p class="TheWork_Time">2019.10.07</p>
+      </div>
+      <p class="TheText TheWork_Text">
+        深層学習によって高次元の空間に生み出されたHATRAという存在に、三次元空間のHATRAを求める人間が干渉していく様を探索する様とつながるための窓である。本作品に用いられたGANは深層学習の生成モデルの一種である。多様体仮説に基づき二次元データであるHATRAのこれまでのルックを元に、N次元空間においてドメインを構築する。鑑賞者の振る舞いは生成の種となり、ドメインにおける新たなHATRAの表現が探索されていく。人による干渉が行われると、ニューロンは活性化され具象化によって呼応しようとする。それに対し、不干渉はニューロンの動きを抑え、具象を忘却させていく。
+      </p>
+      <img :src="image01" alt="" class="TheWork_Image">
+      <img :src="image02" alt="" class="TheWork_Image">
     </div>
   </div>
 </template>
@@ -16,6 +19,12 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  data() {
+    return {
+      image01: "/ALL/test_image.jpg",
+      image02: "/ALL/test_image02.jpg",
+    }
+  },
   components: {
     Logo
   }
@@ -23,34 +32,33 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+.TheWork_HeadImage{
+  width: 100%;
+}
+.TheWork_Countainer{
+  width: 100%;
+  padding: 20px 20px 120px 20px;
+}
+.TheWork_Heading_Countainer{
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: space-between;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.TheWork_Heading{
+  font-family: 'Bodoni';
+  font-weight: normal;
+  font-size: 20px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.TheWork_Time{
+  font-size: 12px;
+  color: #646464;
+  padding-top: 8px;
 }
-
-.links {
-  padding-top: 15px;
+.TheWork_Text{
+  margin-bottom: 12px;
+}
+.TheWork_Image{
+  width: 100%;
+  margin-bottom: 12px;
 }
 </style>

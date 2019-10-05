@@ -22,9 +22,6 @@ export default {
 <style>
 .TheFooter{
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   z-index: 2;
   background: #f9f9f9;
   height: 32px;
@@ -36,7 +33,7 @@ export default {
   font-family: 'Bodoni';
   text-align: center;
   color: #b2b2b2;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 </style>

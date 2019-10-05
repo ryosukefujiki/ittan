@@ -4,7 +4,12 @@
       <transition>
         <img :src="image01" alt="" class="TheHome_Work_Image">
       </transition>
-      <h3 class="TheHome_Work_Heading">Meta-Window</h3>
+      <h3 class="TheHome_Work_Heading">Meta Window</h3>
+    </div>
+    <div class="TheHome_Work_Countainer">
+      <transition>
+        <img :src="comingsoonImage" alt="" class="TheHome_Work_Image">
+      </transition>
     </div>
   </div>
 </template>
@@ -16,6 +21,7 @@ export default {
    data() {
     return {
       image01: "/ALL/test_image.jpg",
+      comingsoonImage: "/All/comingsoon.png",
     }
   },
   components: {
@@ -38,10 +44,11 @@ export default {
 <style>
 .TheHome{
   width: 100%; 
-  padding: 80px 20px 0px 20px;
+  padding: 80px 20px 120px 20px;
 }
 .TheHome_Work_Countainer{
   cursor: pointer;
+  margin-bottom: 32px;
 }
 .TheHome_Work_Heading{
   font-family: 'Bodoni';

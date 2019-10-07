@@ -2,9 +2,9 @@
   <div class="TheAbout">
     <h2 class="TheAbout_Heading FadeIn">About Us</h2>
     <p class="TheText TheAbout_Text FadeIn">
-      "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ集団。
-      <br />2019年に岸裕真・芳賀健・中村直人を中心に結成され、同年10月から国内ブランドとの共同開発を開始。
-      日本伝統の文化に根ざした新しい表現のために、デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
+      "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ・チーム。
+      <br />2019年に岸裕真・芳賀健・中村直人を中心に結成され、同年10月からファッションブランドとの共同開発を開始。
+      デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
     </p>
     <img :src="AboutImage" alt="ittan" class="TheAbout_Image FadeIn" />
     <h2 class="TheAbout_Heading FadeIn">Contact</h2>

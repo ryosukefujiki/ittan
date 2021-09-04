@@ -1,7 +1,7 @@
 <template>
   <div class="TheHome">
     <nuxt-link class="TheHome_Work_Countainer" id="meta-window" :to="`/${content.id}`" v-for="content in contents" :key="content.id">
-        <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
+        <img :src="`${content.keyvisual.url}`" alt="" class="TheHome_Work_Image FadeIn">
       <h3 class="TheHome_Work_Heading FadeIn">{{ content.title }}</h3>
     </nuxt-link>
     <a class="TheHome_Work_Countainer FadeIn">
@@ -23,6 +23,7 @@ export default {
         headers: { 'X-API-KEY': 'ea702257-4ee9-42b1-a238-5928b97e5be9' }
       }
     )
+    console.log(data)
     return data
   },
    data() {

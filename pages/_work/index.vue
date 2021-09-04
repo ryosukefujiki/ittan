@@ -1,6 +1,6 @@
 <template>
   <div class="TheWork">
-    <img :src="image01" alt="" class="TheWork_HeadImage">
+    <img :src="`${keyvisual.url}`" alt="" class="TheWork_HeadImage">
     <!-- <div class="TheWork_HeadImage"></div> -->
     <div class="TheWork_Countainer">
       <div class="TheWork_Heading_Countainer">

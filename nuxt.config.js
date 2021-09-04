@@ -81,7 +81,7 @@ export default {
   generate: {
     async routes() {
       const pages = await axios
-        .get('https://your-service-id.microcms.io/api/v1/works?limit=100', {
+        .get('https://ittan.microcms.io/api/v1/works?limit=100', {
           headers: { 'X-API-KEY': 'ea702257-4ee9-42b1-a238-5928b97e5be9' }
         })
         .then((res) =>

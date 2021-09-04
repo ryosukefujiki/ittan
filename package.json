@@ -16,5 +16,8 @@
     "gsap": "^2.1.3",
     "nuxt": "^2.0.0",
     "nuxt-microcms-module": "^1.0.1"
+  },
+  "devDependencies": {
+    "nuxt-svg-loader": "^1.2.0"
   }
 }

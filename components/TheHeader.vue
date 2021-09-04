@@ -2,7 +2,7 @@
   <header class="TheHeader">
     <div class="TheHeader_Countainer">
     <h1 class="TheHeader_Logo" @click="routing('/')">
-      <img :src="LogoImage" alt="" class="TheHeader_Logo_Image">
+      <LogoSvg class="TheHeader_Logo_Image"></LogoSvg>
     </h1>
     <a class="TheHeader_Link" @click="routing('/')" v-if="this.$route.path == '/about'">Works</a>
     <a class="TheHeader_Link" @click="routing('/about')" v-else>About Us</a>
@@ -12,13 +12,17 @@
 </template>
 <script>
 
+import LogoSvg from '@/assets/All/logo.svg'
+
 export default {
   data() {
     return {
-      LogoImage: "/All/logo.png",
+      // LogoImage: "/All/logo.png",
+      // LogoImage: "/All/sns_twitter.svg",
     }
   },
   components: {
+    LogoSvg,
   },
   methods: {
     routing(url){
@@ -71,6 +75,7 @@ export default {
   cursor: pointer;
 }
 .TheHeader_Logo_Image{
+  fill: #000;
   width: 48px;
 }
 

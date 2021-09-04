@@ -1,24 +1,30 @@
 <template>
   <div class="TheHome">
-    <a class="TheHome_Work_Countainer" id="meta-window" @click="routing('/meta-window')">
-      <!-- <transition> -->
+    <nuxt-link class="TheHome_Work_Countainer" id="meta-window" :to="`/${content.id}`" v-for="content in contents" :key="content.id">
         <img :src="image01" alt="" class="TheHome_Work_Image FadeIn">
-      <!-- </transition> -->
-      <h3 class="TheHome_Work_Heading FadeIn">meta-window</h3>
-    </a>
+      <h3 class="TheHome_Work_Heading FadeIn">{{ content.title }}</h3>
+    </nuxt-link>
     <a class="TheHome_Work_Countainer FadeIn">
-      <!-- <transition> -->
         <img :src="comingsoonImage" alt="" class="TheHome_Work_Image_ComingSoon FadeIn" @click="wiggle()">
-      <!-- </transition> -->
     </a>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import Logo from '~/components/Logo.vue'
 import {mapGetters} from 'vuex'
 
 export default {
+  async asyncData() {
+    const { data } = await axios.get(
+      'https://ittan.microcms.io/api/v1/works',
+      {
+        headers: { 'X-API-KEY': 'ea702257-4ee9-42b1-a238-5928b97e5be9' }
+      }
+    )
+    return data
+  },
    data() {
     return {
       image01: "/ALL/test_image.jpg",
@@ -151,6 +157,7 @@ export default {
 .TheHome_Work_Countainer{
   display: block;
   cursor: pointer;
+  text-decoration: none;
   margin-bottom: 32px;
 }
 .TheHome_Work_Heading{
@@ -158,6 +165,7 @@ export default {
   font-weight: normal;
   font-size: 16px;
   margin-top: 8px;
+  color: #272727;
 }
 .TheHome_Work_Image{
   width: 100%;  

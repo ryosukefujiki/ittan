@@ -50,8 +50,19 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  // buildModules: [
+  //   'nuxt-microcms-module'
+  // ],
+  // buildModules: [
+  //   '@nuxtjs/date-fns',
+  // ],
+  // microcms: {
+  //   options: {
+  //     serviceDomain: process.env.SERVICE_DOMAIN,
+  //     apiKey: process.env.API_KEY,
+  //   },
+  //   mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  // },
   /*
   ** Nuxt.js modules
   */

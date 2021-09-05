@@ -1,16 +1,12 @@
 <template>
   <div class="TheWork">
     <img :src="`${keyvisual.url}`" alt="" class="TheWork_HeadImage">
-    <!-- <div class="TheWork_HeadImage"></div> -->
     <div class="TheWork_Countainer">
       <div class="TheWork_Heading_Countainer">
-       <!-- <h1 class="TheWork_Heading FadeIn">Meta Window</h1> -->
        <h1 class="TheWork_Heading FadeIn">{{ title }}</h1>
         <p class="TheWork_Time FadeIn">{{ dayFormat(date) }}</p>
       </div>
-      <div class="TheWork_Body_Countainer FadeIn" v-html="body"></div>
-      
-     
+      <div class="TheWork_Body_Countainer FadeIn" v-for="content in contents" v-html="content.content"></div>
     </div>
   </div>
 </template>
@@ -23,13 +19,12 @@ import Logo from '~/components/Logo.vue'
 export default {
     async asyncData({ params }) {
     const { data } = await axios.get(
-      // your-service-id部分は自分のサービスidに置き換えてください
       `https://ittan.microcms.io/api/v1/works/${params.work}`,
       {
-        // your-api-key部分は自分のapi-keyに置き換えてください
         headers: { 'X-API-KEY': 'ea702257-4ee9-42b1-a238-5928b97e5be9' }
       }
     )
+    console.log(data)
     return data
   },
   data() {
@@ -100,7 +95,7 @@ export default {
 
 <style>
 .TheWork{
-  height: 100%;
+  min-height: calc(100vh - 32px);
 }
 .TheWork_HeadImage{
   width: 100%;
@@ -136,6 +131,19 @@ export default {
 .TheWork_Body_Countainer img{
   width: 100%;
   margin-bottom: 12px;
+}
+.TheWork_Body_Countainer iframe{
+  width: 100%;
+  height: calc((100vw - 40px)/16*9);
+}
+.TheWork_Body_ImgContainer{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.TheWork_Body_ImgContainer img{
+  width: 49%;
 }
 
 
@@ -176,6 +184,15 @@ export default {
   width: 100%;
   margin-bottom: 20px;
 }
+.TheWork_Body_Countainer iframe{
+  width: 680px;
+  height: calc(680px/16*9);
+}
+.TheWork_Body_ImgContainer img{
+  width: 32%;
+}
+
+
 }
 
 

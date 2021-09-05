@@ -2,56 +2,15 @@
   <div class="TheAbout">
     <h2 class="TheAbout_Heading FadeIn">About Us</h2>
     <p class="TheText TheAbout_Text FadeIn">
-      "ittan"はテクノロジーによりファッションの新しい可能性を探索するクリエイティブ・チーム。
-      <br />2019年に岸裕真・芳賀健・中村直人を中心に結成され、同年10月からファッションブランドとの共同開発を開始。
-      デザイナーのための技術開発から映像作品やインスタレーション制作などを中心に活動中。
+      機械学習, 空間デザイン, グラフィック, WEBディレクションなど専門性の高いスキルを持つ若手作家たちが集まり, 2019年に結成されました.
+      伝統芸能, ファッション, イベントライブなど幅広い領域とコラボレーションしながら, テクノロジーと表現の可能性を追求しています.
     </p>
     <img :src="AboutImage" alt="ittan" class="TheAbout_Image FadeIn" />
     <h2 class="TheAbout_Heading FadeIn">Contact</h2>
-
-    <form name="contact" v-if="isSubmit == false" @submit.prevent="onSubmit">
-      <p class="TheText TheContact_Text FadeIn">
-        <label>
-          お名前
-          <br />
-          <input type="text" name="name" v-model="name" required="required" />
-        </label>
-      </p>
-      <p class="TheText FadeIn">
-        <label>
-          Email
-          <br />
-          <input type="email" v-model="email" name="email" required="required" />
-        </label>
-      </p>
-      <p class="TheText FadeIn">
-        <label>
-          お問い合わせ内容
-          <br />
-          <textarea v-model="content" name="content" required="required"></textarea>
-        </label>
-      </p>
-      <p class="TheText ButtonText FadeIn">
-        <button type="submit">送信</button>
-      </p>
-    </form>
-
-    <div>
-      <!-- <p class="TheText FadeIn" v-if="isSubmit == true">Thanks!</p> -->
-      <p class="TheText FadeIn" v-show="isSubmit == true">ありがとうございます。 無事にお問い合わせ内容を受け取りました。</p>
-      <p class="TheText FadeIn ErroeText" v-show="submitFalse == true">
-        申し訳ございません。お問い合わせ内容を受け取ることができませんでした。
-        <br />もう一度、ネットワーク環境を確認し、時間を置いてお問い合わせ下さい。
-      </p>
-    </div>
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="content"></textarea>
-    </form>
-    <!-- <p class="TheText TheAbout_Text FadeIn">
-      E-mail : ittan.office@gmail.com
-    </p>-->
+    <p class="TheText TheAbout_Text FadeIn">
+      <a href="mailto:ittan.ask@gmail.com" style="color: #272727;" target="_blank">ittan.ask @ gmail.com</a><br>
+      担当者：Ken Haga
+    </p>
   </div>
 </template>
 <script>
